@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALERT: SYSTEM HACKED</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 20%;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .warning {
+            font-size: 30px;
+            font-weight: bold;
+            color: yellow;
+        }
+        .error {
+            font-size: 40px;
+            font-weight: bold;
+            color: red;
+        }
+        .alert {
+            font-size: 36px;
+            color: orange;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 50px;
+            font-weight: bold;
+            color: lime;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚨 SYSTEM HACKED 🚨</h1>
+    <p>Your device has been compromised.</p>
+    <p class="warning">Unauthorized access detected.</p>
+    <p class="alert">ALL FILES WILL BE ERASED</p>
+    <p class="error">⛔ SYSTEM WIPE IMMINENT ⛔</p>
+    <p>⏳ <span class="countdown" id="timer">10</span> seconds until wipe.</p>
+
+    <script>
+        var countdown = 10;
+        var timerElement = document.getElementById("timer");
+        var interval = setInterval(function() {
+            countdown--;
+            timerElement.innerHTML = countdown;
+            if (countdown <= 0) {
+                clearInterval(interval);
+                document.body.innerHTML = "<h1 style='color:red;'>SYSTEM WIPE COMPLETE</h1><p>ALL DATA HAS BEEN ERASED.</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
